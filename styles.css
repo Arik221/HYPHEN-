@@ -1,0 +1,394 @@
+/* General styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: linear-gradient(135deg, #ffcc33, #ff66cc, #3399ff, #66ff66);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow-y: scroll;
+    transition: background-color 0.5s;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body.dark-mode {
+    background-color: #333;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    color: white;
+}
+
+/* Header styles */
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 2em;
+    animation: colorChange 10s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% { color: #ffcc33; }
+    25% { color: #ff66cc; }
+    50% { color: #3399ff; }
+    75% { color: #66ff66; }
+    100% { color: #ffcc33; }
+}
+
+/* Navigation styles */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    border-bottom-color: #66ff66;
+}
+
+/* Toggle switch styles */
+
+.toggle-container {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 10;
+}
+
+.toggle {
+    display: none;
+}
+
+.toggle-label {
+    display: block;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-label:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle:checked + .toggle-label {
+    background-color: #66ff66;
+}
+
+.toggle:checked + .toggle-label:before {
+    transform: translateX(25px);
+}
+
+/* Main content styles */
+
+main {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+}
+
+#intro {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.intro-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro-left,
+.intro-right {
+    width: 45%;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+}
+
+.intro-right {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    margin: 0.5em 0 0.2em;
+}
+
+form input, form select, form button {
+    display: block;
+    margin-bottom: 1em;
+    width: calc(100% - 2em);
+    padding: 0.75em;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    font-size: 1em;
+    background: rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+form input:focus, form select:focus, form button:focus {
+    box-shadow: 0 0 12px rgba(18, 19, 19, 1);
+    outline: none;
+}
+
+/* Buy Book section styles */
+
+#buy-book {
+    text-align: center;
+    margin-top: 2em;
+    padding: 1em;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#search-area {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search {
+    padding: 0.75em;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    font-size: 1em;
+    background: rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+#search:focus {
+    box-shadow: 0 0 12px rgba(18, 19, 19, 1);
+    outline: none;
+}
+
+#search-button {
+    margin-left: 0.5em;
+    padding: 0.75em 1em;
+    background-color: #66ff66;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #4ddb4d;
+}
+
+/* Dark Mode Input Styles */
+
+body.dark-mode form input, body.dark-mode form select, body.dark-mode form button,
+body.dark-mode #search {
+    box-shadow: none;
+}
+
+body.dark-mode form input:focus, body.dark-mode form select:focus, body.dark-mode form button:focus,
+body.dark-mode #search:focus {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 1);
+}
+
+/* Light Mode Input Styles */
+
+body:not(.dark-mode) form input, body:not(.dark-mode) form select, body:not(.dark-mode) form button,
+body:not(.dark-mode) #search {
+    box-shadow: none;
+}
+
+body:not(.dark-mode) form input:focus, body:not(.dark-mode) form select:focus, body:not(.dark-mode) form button:focus,
+body:not(.dark-mode) #search:focus {
+    box-shadow: 0 0 12px rgba(18, 19, 19, 1);
+}
+
+/* Background styles */
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #ff6b6b, #f7ff00, #00d4ff);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+    z-index: -1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    transition: background-color 0.5s;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.cube {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+}
+
+.cube:before, .cube:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: inherit;
+    transform: translateZ(50px);
+}
+
+.cube:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 15s;
+}
+
+.cube:nth-child(2) {
+    top: 30%;
+    left: 70%;
+    width: 120px;
+    height: 120px;
+    animation-duration: 25s;
+}
+
+.cube:nth-child(3) {
+    top: 60%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 10s;
+}
+
+.cube:nth-child(4) {
+    top: 80%;
+    left: 30%;
+    width: 90px;
+    height: 90px;
+    animation-duration: 20s;
+}
+
+.cube:nth-child(5) {
+    top: 50%;
+    left: 10%;
+    width: 70px;
+    height: 70px;
+    animation-duration: 18s;
+}
+
+@keyframes rotate {
+    0% { transform: rotateX(0) rotateY(0); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* Dark mode specific styles */
+
+body.dark-mode {
+    background-color: #333;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    color: white;
+}
+
+body.dark-mode .background {
+    background: linear-gradient(45deg, #1f1f1f, #333333, #1f1f1f);
+}
+
+body.dark-mode .cube {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode nav ul li a {
+    color: white;
+}
+
+body.dark-mode header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+body.dark-mode form input, body.dark-mode form select, body.dark-mode form button,
+body.dark-mode #search {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode form input:focus, body.dark-mode form select:focus, body.dark-mode form button:focus,
+body.dark-mode #search:focus {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 1);
+}
+
+body.dark-mode #search-button {
+    background-color: #4ddb4d;
+}
+
+body.dark-mode #search-button:hover {
+    background-color: #33cc33;
+}
+
+/* Contact info styles */
+
+.contact-info {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+

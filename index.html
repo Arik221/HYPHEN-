@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbook Exchange Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Connecting YOU with THEM</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sell a Book</a></li>
+                <li><a href="#">Buy a Book</a></li>
+                <li><a href="#">Contact As</a></li>
+                <!-- Add Instagram icon and username -->
+                <li>
+                    <a href="https://www.instagram.com/hyphen_connect?igsh=MXRoMDN2b3ZuZTFzMQ==" target="_blank">
+                        <i class="fab fa-instagram"></i> Hyphen_connect
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle" class="toggle">
+            <label for="toggle" class="toggle-label"></label>
+        </div>
+    </header>
+    <main>
+        <section id="intro">
+            <div class="intro-container">
+                <div class="intro-left">
+                    <div class="logo-container">
+                        <!-- <img src="" alt="Hyphen_connect Logo"> -->
+                    </div>
+                    <h2>Welcome to Hyphen_connect!</h2>
+                    <p>Hi! Great seeing you here, this is Hyphen, a platform dedicated to the buying and selling of old textbooks. Our mission is to make learning resources available to everyone by providing a marketplace where you can easily sell, buy, and exchange academic books. Join us in this journey to promote sustainable and cost-effective education!</p>
+                </div>
+                <div class="intro-right">
+                    <h2>Sell a Book</h2>
+                    <form id="sell-form">
+                        <label for="title">Book Title:</label>
+                        <input type="text" id="title" name="title" required>
+                        
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author" required>
+                        
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price" required>
+                        
+                        <label for="condition">Condition:</label>
+                        <select id="condition" name="condition" required>
+                            <option value="new">New</option>
+                            <option value="like-new">Like New</option>
+                            <option value="good">Good</option>
+                            <option value="fair">Fair</option>
+                        </select>
+                        
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="buy-book">
+            <h2>Buy a Book</h2>
+            <div id="search-area">
+                <input type="text" id="search" placeholder="Search for books...">
+                <button id="search-button">Search</button>
+            </div>
+            <div id="book-list"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="contact-info">
+            <p>Phone: +91 93622 77935</p>
+            <p>Email: hyphen.orgbusiness@gmail.com</p>
+        </div>
+        <p>&copy; 2024 Textbook Exchange Platform</p>
+    </footer>
+    <div class="background">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+    <script src="scripts2.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
